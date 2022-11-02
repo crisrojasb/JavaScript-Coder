@@ -121,7 +121,6 @@ for (let interes of creditos) {
 const btn = document.getElementById("btn");
 
 btn.onclick = ()=> {
-    alert("Segunda formaaaaaaa");
     document.getElementById("pagoMes").value = "$ " + (((intereses + 0.015) * document.querySelector(".cantidad").value) / document.getElementById("meses-select").value);
     document.getElementById("total").value = "$ " + ((intereses + 0.015) * document.querySelector(".cantidad").value);
 }
