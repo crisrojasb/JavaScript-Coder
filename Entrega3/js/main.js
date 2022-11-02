@@ -3,10 +3,10 @@
 // Array de objetos
 const creditos = [
     { id: 1, codigo: 11, nombre: "Nacional",      tipo: "viaje",    montoMax: 2500000,  interes: 1.08},
-    { id: 2, codigo: 12, nombre: "Internacional", tipo: "viaje",    montoMax: 4000000,  interes: 1.09},
-    { id: 3, codigo: 21, nombre: "Post-grado",    tipo: "estudio",  montoMax: 2800000,  interes: 1.04},
+    { id: 2, codigo: 12, nombre: "Internacional", tipo: "viaje",    montoMax: 4000000,  interes: 1.08},
+    { id: 3, codigo: 21, nombre: "Post-grado",    tipo: "estudio",  montoMax: 2800000,  interes: 1.06},
     { id: 4, codigo: 22, nombre: "Maestria",      tipo: "estudio",  montoMax: 3200000,  interes: 1.06},
-    { id: 5, codigo: 31, nombre: "Carro",         tipo: "vehiculo", montoMax: 20000000, interes: 1.09},
+    { id: 5, codigo: 31, nombre: "Carro",         tipo: "vehiculo", montoMax: 20000000, interes: 1.11},
     { id: 6, codigo: 32, nombre: "Moto",          tipo: "vehiculo", montoMax: 12000000, interes: 1.11},
     { id: 7, codigo: 41, nombre: "Libre",         tipo: "libre",    montoMax: 5000000,  interes: 1.13}
 ];
@@ -65,6 +65,63 @@ function solicitud(opc) {
             filtro += cont + ". " + el.tipo + " " + (el.tipo === "libre" ? "Inversión" : el.nombre) + " - Monto Máximo: " + el.montoMax + "\n";
         }
     })
-    //alert(filtro)
+    
     return filtro;
+}
+
+//Evento Listener
+class Credito {
+    constructor (valor, meses){
+        this.valor = valor;
+        this.meses = meses;
+    }
+}
+
+const arrayCreditos = [];
+
+const formulario = document.getElementById("formulario");
+
+formulario.addEventListener("submit", (e)=>{
+    e.preventDefault();
+
+    const valor = document.getElementById("valor");
+    const meses = document.getElementById("meses");
+    console.log("El valor ingresado es: " + valor.value);
+    console.log("Meses ingresados: " + meses.value);
+    console.log("Formulario enviado");
+
+    //Creación de objeto Credito:
+    const credito = new Credito(valor.value, meses.value);
+    arrayCreditos.push(credito);
+
+    //Verificación por consola
+    console.log(arrayCreditos);
+})
+
+//Set Storage
+function almacenamiento(x) {
+    localStorage.setItem("tipo", x);
+}
+
+//Get Storage
+let tea = localStorage.getItem("tipo");
+let intereses;
+
+for (let interes of creditos) {
+    if (interes.tipo == tea){
+        intereses = interes.interes;
+        document.getElementById("pagoMes").value = "$ " + (((intereses + 0.015) * document.querySelector(".cantidad").value) / document.getElementById("meses-select").value);
+        document.getElementById("TEA").value = intereses + "%";
+        document.getElementById("VTU").value = (intereses + 0.015) + "%";
+        document.getElementById("total").value = "$ " + ((intereses + 0.015) * document.querySelector(".cantidad").value);
+    }
+}
+
+//Actualizar datos
+const btn = document.getElementById("btn");
+
+btn.onclick = ()=> {
+    alert("Segunda formaaaaaaa");
+    document.getElementById("pagoMes").value = "$ " + (((intereses + 0.015) * document.querySelector(".cantidad").value) / document.getElementById("meses-select").value);
+    document.getElementById("total").value = "$ " + ((intereses + 0.015) * document.querySelector(".cantidad").value);
 }

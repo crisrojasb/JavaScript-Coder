@@ -4,9 +4,92 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Link CSS -->
+    <link rel="stylesheet" href="../css/style.css">
+
+    <!-- Título -->
     <title>Entrega 3 - Simulador</title>
 </head>
 <body>
-    
+    <div class="encabezado">
+        <header>
+            <h2>Entrega 3</h2>
+            <span class="subtitulo">Simulador Crédito Bancario</span>
+        </header>
+    </div>
+    <div class="contenedor">
+        <div class="contenedor-datos">
+            <div class="recopilacion-datos">
+                <div class="form-datos">
+                    <form id="formulario">
+                        
+                            <div>
+                                <h3>Simula tu crédito</h2>
+                            </div>
+                            <div>
+                                <p>Solicita hasta - y disfruta!</p>
+                            </div>
+                            <div class="contenedor-cantidad">
+                                <label>¿Qué cantidad necesitas?</label>
+                                <div>
+                                    <div>
+                                        <span>$</span>
+                                    </div>
+                                    <div class="cantidad-input">
+                                        <input type="text" class="cantidad" autocorrect="off" autocomplete="off" maxlength="10" value="1000000" data-type="currency">
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <label for="meses-select">A pagar en</label>
+                            </div>
+                            <div>
+                                <select name="meses" id="meses-select">
+                                    <option value="6">6 meses</option>
+                                    <option value="12">12 meses</option>
+                                    <option value="18">18 meses</option>
+                                    <option value="24">24 meses</option>
+                                </select>
+                            </div>
+                            <div>
+                                <!-- <input type="submit" id="btn" value="Calcular"> -->
+                                <button id="btn" type="submit">Calcular</button>
+                            </div>
+                        
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="contenedor-calculo">
+            <div class="seccion-calculo">
+                <div class="fila-recopilada">
+                    <div class="valor-texto">
+                        <input type="text" id="pagoMes" value="" maxlength="10" data-type="currency" pattern="^\$\d{1,3}(,\d{3})*(\.\d+)?$" readonly>
+                        <span>/mes</span>
+                    </div>
+                </div>
+                <div class="fila-recopilada fila-direccion">
+                    <div class="columna-datos">
+                        <div class="fila-datos">Tasa Efectiva Anual:</div>
+                        <div class="fila-datos">VTU porcentual:</div>
+                        <div class="fila-datos">Sumando capital, intereses, seguro de vida y gastos, en total pagarás:</div>
+                    </div>
+                    <div class="columna-datos derecha">
+                        <div class="fila-datos negrilla">
+                            <input type="text" id="TEA" value="..." maxlength="5" readonly>
+                        </div>
+                        <div class="fila-datos negrilla">
+                            <input type="text" id="VTU" value="..." maxlength="5" readonly>
+                        </div>
+                        <div class="fila-datos negrilla">
+                            <input type="text" id="total" value="" maxlength="10" data-type="currency" pattern="^\$\d{1,3}(,\d{3})*(\.\d+)?$" readonly>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="../js/main.js"></script>
 </body>
 </html>
