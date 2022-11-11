@@ -1,0 +1,236 @@
+/* reset */
+*{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+    border: none;
+    outline: none;
+    box-sizing: border-box;
+}
+
+/* index */
+.background_ {
+    position: relative;
+    display: flex;
+    background: linear-gradient(transparent, 40%, white 55%), url("../imgs/escritorio.jpg"); /* img donwloaded from freepiks.com */
+    justify-content: center;
+    align-items: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    width: 100%;
+    height: 100vh;
+    margin: 0;
+}
+
+.background_ h1, h2, .subtitulo, .frase { /* h2 en html simulador */
+    position: absolute;
+    color: black;
+    text-shadow: 0 0 1px gray, 0 0 1px gray, 0 0 2px gray;
+    -webkit-text-stroke: .2px antiquewhite;
+}
+
+.background_ h1, h2 {
+    font-size: 2.5em;
+    top: 5%;
+    left: 5%;
+}
+
+.subtitulo {
+    display: block;
+    font-size: 2.5em;
+    top: 5%;
+    right: 5%;
+
+    white-space: nowrap;
+    border-right: 4px solid antiquewhite;
+    width: 23ch;
+    animation: typing 2s forwards;
+    overflow: hidden;
+}
+
+.background_ .frase {
+    text-shadow: 0 0 2px gray, 0 0 2px gray;
+    text-align: center;
+    font-size: 2em;
+    top: 30%;
+}
+
+.background_ .frase span {
+    font-size: 3em;
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(1, 12vw);
+    grid-gap: 10px;
+    text-align: center;
+
+    position: absolute;
+    bottom: 10%;
+}
+
+.gallery_img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    padding-inline: 50px;
+
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    transform: scale(0.9);
+    -webkit-transform: scale(0.9);
+    transition: all .4s ease-in-out;
+    filter: grayscale(80%);
+}
+
+.gallery_img:hover{
+    transform: scale(1);
+    -webkit-transform: scale(1);
+    filter: grayscale(0%);
+    cursor: pointer;
+}
+
+.gallery_text {
+    font-size: 2em;
+    color: antiquewhite;
+    text-shadow: 0 0 2px black, 0 0 2px black;
+}
+
+/* simulador */
+.encabezado header {
+    position: relative;
+    display: flex;
+    width: 100%;
+    height: 20vh;
+}
+
+.encabezado header .subtitulo, h2 {
+    top: 25%;
+}
+
+.contenedor {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(1, 12vw);
+    grid-gap: 5rem;
+
+    width: 100vw;
+    height: 80vh;
+    padding: 0 2rem;
+    
+    text-align: center;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+}
+
+.contenedor-datos {
+    display: flex;
+    flex-direction: column;
+    padding: 2rem 0 0 0;
+    align-items: center;
+}
+
+.form-datos form {
+    width: 360px;
+}
+
+.form-datos h3 {
+    margin: 15px 0;
+	color: #333;
+	text-transform: uppercase;
+	font-size: 2rem;
+}
+
+#titulo-tipo {
+    margin: 15px 0;
+	color: #333;
+	text-transform: capitalize;
+	font-size: 1.5rem;
+    text-align: center;
+}
+
+.contenedor-cantidad div {
+    display: inline-block;
+    
+}
+
+.cantidad-input {
+    display: inline-block !important;
+    width: 5rem;
+}
+
+.cantidad {
+    text-align: start;
+    width: 100%;
+    background-color: antiquewhite;
+}
+
+.contenedor-calculo {
+    display: flex;
+    flex-direction: column;
+    padding: 2rem 0 0 0;
+    align-items: center;
+}
+
+.seccion-calculo {
+    display: flex;
+    flex-direction: column;
+    background: var(--cc-100, #F4F4F4);
+    color: var(--cc-600, #121212);
+    padding: 1.5rem 1rem;
+    line-height: 1.6;
+    font-size: var(--cells-text-size-ml, 0.9375rem);
+    width: 100%;
+}
+
+.fila-recopilada {
+    letter-spacing: 0;
+    font-size: 15px;
+    padding: 0;
+    margin: 0;
+}
+
+.fila-direccion {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(1, 12vw);
+}
+
+.columna-datos {
+    display: flex;
+    flex-direction: column;
+}
+
+.fila-datos {
+    font-size: 0.9375rem;
+    color: var(--co-600, #121212);
+    line-height: 1.375rem;
+    padding: 5px 0;
+}
+
+#TEA, #VTU, #total, #pagoMes {
+    background-color: transparent;
+    text-align: end;
+    border: 0;
+}
+
+.derecha {
+    justify-content: start;
+    text-align: right;
+}
+
+.negrilla {
+    font-weight: 500;
+}
+
+/* animations */
+@keyframes typing {
+    from {
+        width: 0;
+    }
+}

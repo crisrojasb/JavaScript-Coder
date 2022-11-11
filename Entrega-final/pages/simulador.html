@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Link CSS -->
+    <link rel="stylesheet" href="../css/style.css">
+
+    <!-- Toastify JS -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+
+    <!-- Título -->
+    <title>Entrega Final - Simulador</title>
+</head>
+<body>
+    <div class="encabezado">
+        <header>
+            <h2>Entrega Final</h2>
+            <span class="subtitulo">Simulador Crédito Bancario</span>
+        </header>
+    </div>
+    <div class="contenedor">
+        <div class="contenedor-datos">
+            <div class="recopilacion-datos">
+                <div class="form-datos">
+                    <form id="formulario">
+                        <div>
+                            <h3>Simula tu crédito</h3>
+                        </div>
+                        <div>
+                            <input type="text" id="titulo-tipo">
+                        </div>
+                        <div>
+                            <p>Pidelo y disfruta!</p>
+                        </div>
+                        <div class="contenedor-cantidad">
+                            <label>¿Qué cantidad necesitas?</label>
+                            <br>
+                            <div>
+                                <div>
+                                    <span>$</span>
+                                </div>
+                                <div class="cantidad-input">
+                                    <input type="text" class="cantidad" autocorrect="off" autocomplete="off" maxlength="10" placeholder="0">
+                                </div>
+                                <div>
+                                    <span>COP</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <label for="meses-select">A pagar en</label>
+                        </div>
+                        <div>
+                            <select name="meses" id="meses-select">
+                                <option value="6">6 meses</option>
+                                <option value="12">12 meses</option>
+                                <option value="18">18 meses</option>
+                                <option value="24">24 meses</option>
+                            </select>
+                        </div>
+                        <div>
+                            <!-- <input type="submit" id="btn" value="Calcular"> -->
+                            <button id="btn" type="submit">Calcular</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="contenedor-calculo">
+            <div class="seccion-calculo">
+                <div class="fila-recopilada">
+                    <div id="valor-texto"></div>
+                </div>
+                <div class="fila-recopilada fila-direccion">
+                    <div class="columna-datos">
+                        <div class="fila-datos">Tasa Efectiva Anual:</div>
+                        <div class="fila-datos">VTU porcentual:</div>
+                        <div class="fila-datos" id="total-text"></div>
+                    </div>
+                    <div class="columna-datos derecha">
+                        <div class="fila-datos negrilla">
+                            <input type="text" id="TEA" placeholder="0" maxlength="5" readonly>
+                            <span>%</span>
+                        </div>
+                        <div class="fila-datos negrilla">
+                            <input type="text" id="VTU" placeholder="0" maxlength="5" readonly>
+                            <span>%</span>
+                        </div>
+                        <div class="fila-datos negrilla" id="total-valor"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="../js/main.js"></script>
+    <script src="../js/calcular.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+</body>
+</html>
